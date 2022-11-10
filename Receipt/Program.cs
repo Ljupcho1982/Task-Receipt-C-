@@ -41,16 +41,24 @@ try
 
     foreach (var group in groupByOriginDomestic)
     {
-
+        var test = string.Empty;
 
         if (group.weight == 0)
         {
-            group.weight.ToString().Replace("0", "N/A");
 
+
+            test = group.weight.ToString().Replace("0", "N/A");
+
+
+        }
+        else
+        {
+
+            test = group.weight.ToString() + "g";
         }
 
 
-        Console.WriteLine($" \n {group.name}\n {group.price}$ \n {group.description} \n Weight {group.weight}g");
+        Console.WriteLine($" \n {group.name}\n {group.price}$ \n {group.description} \n Weight {test}");
 
         totalDomestic += (double)group.price;
         countDomestic++;
